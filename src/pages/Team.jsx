@@ -1,3 +1,4 @@
+import { useState } from 'react'
 import { AnimatePresence, motion } from 'motion/react'
 import Reveal from '../components/Reveal'
 import PlaceholderImage from '../components/PlaceholderImage'
@@ -7,6 +8,8 @@ import { STUDIO } from '../constants'
 
 export default function Team() {
   const active = BRANCHES.find((b) => b.id === 'legian')
+  const [discipline, setDiscipline] = useState('tattoo')
+  const members = active.team.filter((m) => m.discipline === discipline)
 
   useDocumentHead({
     title: 'Our Team',
@@ -26,16 +29,27 @@ export default function Team() {
           </p>
         </Reveal>
 
+        <Reveal delay={0.05} className="mb-12">
+          <select
+            value={discipline}
+            onChange={(e) => setDiscipline(e.target.value)}
+            className="bg-transparent border border-bone/20 px-4 py-2.5 text-sm uppercase tracking-widest text-bone focus:outline-none focus:border-blood-bright transition-colors"
+          >
+            <option value="tattoo" className="bg-ink">Tattoo</option>
+            <option value="piercing" className="bg-ink">Piercing</option>
+          </select>
+        </Reveal>
+
         <AnimatePresence mode="wait">
           <motion.div
-            key={active.id}
+            key={discipline}
             initial={{ opacity: 0, y: 12 }}
             animate={{ opacity: 1, y: 0 }}
             exit={{ opacity: 0, y: -12 }}
             transition={{ duration: 0.25 }}
           >
             <div className="grid sm:grid-cols-2 gap-10">
-              {active.team.map((member, i) => (
+              {members.map((member, i) => (
                 <Reveal key={member.name} delay={i * 0.1}>
                   <PlaceholderImage
                     label={member.name}
