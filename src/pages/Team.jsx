@@ -1,5 +1,3 @@
-import { useEffect, useState } from 'react'
-import { useParams, useNavigate } from 'react-router-dom'
 import { AnimatePresence, motion } from 'motion/react'
 import Reveal from '../components/Reveal'
 import PlaceholderImage from '../components/PlaceholderImage'
@@ -8,19 +6,10 @@ import { BRANCHES } from '../data/branches'
 import { STUDIO } from '../constants'
 
 export default function Team() {
-  const { branch: branchId } = useParams()
-  const navigate = useNavigate()
-  const active =
-    BRANCHES.find((b) => b.id === branchId) || BRANCHES.find((b) => b.id === 'legian')
-
-  useEffect(() => {
-    // land on /team with no branch in the URL -> default to Legian without a redirect loop
-    if (!branchId) return
-    if (!BRANCHES.some((b) => b.id === branchId)) navigate('/team', { replace: true })
-  }, [branchId, navigate])
+  const active = BRANCHES.find((b) => b.id === 'legian')
 
   useDocumentHead({
-    title: active.id === 'legian' ? 'Our Team' : `Our Team — ${active.short}`,
+    title: 'Our Team',
     description: `Meet the artists at Swordsman Tattoo Studio ${active.short} (${active.rating}★, ${active.reviewCount} reviews).`,
   })
 
@@ -35,22 +24,6 @@ export default function Team() {
           <p className="text-bone-dim">
             Our artists are available at all 3 locations.
           </p>
-        </Reveal>
-
-        <Reveal delay={0.05} className="flex flex-wrap gap-3 mb-16">
-          {BRANCHES.map((b) => (
-            <button
-              key={b.id}
-              onClick={() => navigate(b.id === 'legian' ? '/team' : `/team/${b.id}`)}
-              className={`px-4 py-2 text-xs uppercase tracking-widest border transition-colors ${
-                active.id === b.id
-                  ? 'bg-blood border-blood text-bone'
-                  : 'border-bone/20 text-bone-dim hover:border-bone/50 hover:text-bone'
-              }`}
-            >
-              {b.short} <span className="opacity-60">· {b.rating}★</span>
-            </button>
-          ))}
         </Reveal>
 
         <AnimatePresence mode="wait">

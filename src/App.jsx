@@ -14,7 +14,6 @@ export default function App() {
       <Route element={<Layout />}>
         <Route path="/" element={<Home />} />
         <Route path="/team" element={<Team />} />
-        <Route path="/team/:branch" element={<Team />} />
         <Route path="/portfolio" element={<Portfolio />} />
         <Route path="/portfolio/:category" element={<Portfolio />} />
         <Route path="/gallery" element={<Navigate to="/portfolio" replace />} />
