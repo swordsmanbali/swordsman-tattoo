@@ -29,15 +29,24 @@ export default function Team() {
           </p>
         </Reveal>
 
-        <Reveal delay={0.05} className="mb-12">
-          <select
-            value={discipline}
-            onChange={(e) => setDiscipline(e.target.value)}
-            className="bg-transparent border border-bone/20 px-4 py-2.5 text-sm uppercase tracking-widest text-bone focus:outline-none focus:border-blood-bright transition-colors"
-          >
-            <option value="tattoo" className="bg-ink">Tattoo</option>
-            <option value="piercing" className="bg-ink">Piercing</option>
-          </select>
+        <Reveal delay={0.05} className="flex flex-wrap gap-3 mb-12">
+          {[
+            { id: 'tattoo', label: 'Tattoo' },
+            { id: 'piercing', label: 'Piercing' },
+          ].map((opt) => (
+            <button
+              key={opt.id}
+              type="button"
+              onClick={() => setDiscipline(opt.id)}
+              className={`px-4 py-2 text-xs uppercase tracking-widest border transition-colors ${
+                discipline === opt.id
+                  ? 'bg-blood border-blood text-bone'
+                  : 'border-bone/20 text-bone-dim hover:border-bone/50 hover:text-bone'
+              }`}
+            >
+              {opt.label}
+            </button>
+          ))}
         </Reveal>
 
         <AnimatePresence mode="wait">
