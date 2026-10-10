@@ -33,7 +33,7 @@ export default function Team() {
             The Artists
           </h1>
           <p className="text-bone-dim">
-            Swordsman runs 3 studios — pick a location to see who's there.
+            Our artists are available at all 3 locations.
           </p>
         </Reveal>
 
