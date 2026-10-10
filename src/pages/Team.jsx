@@ -34,8 +34,6 @@ export default function Team() {
             exit={{ opacity: 0, y: -12 }}
             transition={{ duration: 0.25 }}
           >
-            <p className="text-bone-dim text-sm mb-10">{active.address}</p>
-
             <div className="grid sm:grid-cols-2 gap-10">
               {active.team.map((member, i) => (
                 <Reveal key={member.name} delay={i * 0.1}>
