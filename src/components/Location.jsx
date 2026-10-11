@@ -4,13 +4,12 @@ import Reveal from './Reveal'
 import { STUDIO } from '../constants'
 import { BRANCHES } from '../data/branches'
 
-// Phone/WhatsApp, email, and Instagram are shared across all 3 branches —
-// one number/account for the whole studio, not one per location. Only
-// address, hours, and the map differ per branch.
+// Phone/WhatsApp and email are shared across all 3 branches — one number/
+// account for the whole studio, not one per location. Address, hours, the
+// map, and Instagram (each branch runs its own account) differ per branch.
 const sharedRows = [
   { label: 'WhatsApp', value: STUDIO.phoneDisplay, href: STUDIO.whatsapp },
   { label: 'Email', value: STUDIO.email, href: `mailto:${STUDIO.email}` },
-  { label: 'Instagram', value: STUDIO.instagramHandle, href: STUDIO.instagram },
 ]
 
 export default function Location() {
@@ -77,6 +76,21 @@ export default function Location() {
                     Hours
                   </dt>
                   <dd className="text-bone">{active.hours}</dd>
+                </div>
+                <div className="flex flex-col sm:flex-row sm:items-center gap-1 sm:gap-6 py-4">
+                  <dt className="w-28 shrink-0 text-[11px] uppercase tracking-widest text-bone-dim">
+                    Instagram
+                  </dt>
+                  <dd>
+                    <a
+                      href={active.instagram}
+                      target="_blank"
+                      rel="noreferrer"
+                      className="text-bone hover:text-blood-bright transition-colors"
+                    >
+                      {active.instagramHandle}
+                    </a>
+                  </dd>
                 </div>
               </motion.div>
             </AnimatePresence>

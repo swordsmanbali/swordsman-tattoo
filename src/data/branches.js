@@ -20,6 +20,8 @@ export const BRANCHES = [
     mapsLink: 'https://maps.app.goo.gl/XK3SZUnhQ8Hc5oKx5',
     mapsEmbed:
       'https://www.google.com/maps?q=Swordsman+Tattoo+Studio+Bali,+Jl.+Raya+Legian+No.466,+Legian,+Kuta,+Bali&output=embed',
+    instagram: 'https://www.instagram.com/swordsmantattoostudiobali/',
+    instagramHandle: '@swordsmantattoostudiobali',
     src: '/branches/bali.jpg',
     team: [
       {
@@ -58,6 +60,8 @@ export const BRANCHES = [
     mapsLink: 'https://www.google.com/maps/search/Swordsman+Tattoo+Studio+Legian+Jl+Raya+Legian+No.398',
     mapsEmbed:
       'https://www.google.com/maps?q=Swordsman+Tattoo+Studio+Legian,+Jl.+Raya+Legian+No.398,+Legian,+Kuta,+Bali&output=embed',
+    instagram: 'https://www.instagram.com/swordsmantattoostudiolegian/',
+    instagramHandle: '@swordsmantattoostudiolegian',
     src: '/branches/legian.jpg',
     team: [
       {
@@ -125,6 +129,8 @@ export const BRANCHES = [
     mapsLink: 'https://www.google.com/maps/search/Swordsman+Tattoo+Studio+Kuta+Jl+Bakung+Sari+No.39',
     mapsEmbed:
       'https://www.google.com/maps?q=Swordsman+Tattoo+Studio+Kuta,+Jl.+Bakung+Sari+No.39,+Kuta,+Bali&output=embed',
+    instagram: 'https://www.instagram.com/swordsmantattoostudiokuta/',
+    instagramHandle: '@swordsmantattoostudiokuta',
     src: '/branches/kuta.jpg',
     team: [
       {
