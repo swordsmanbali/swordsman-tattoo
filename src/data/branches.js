@@ -88,9 +88,16 @@ export const BRANCHES = [
         src: '/team/novi.jpg',
       },
       {
+        name: 'Xace',
+        role: 'Tattoo Artist',
+        discipline: 'tattoo',
+        src: '/team/xace.jpg',
+      },
+      {
         name: 'Linda',
         role: 'Piercer',
         discipline: 'piercing',
+        src: '/team/linda.jpg',
       },
       {
         name: 'Wayan',

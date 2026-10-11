@@ -65,11 +65,7 @@ export default function Team() {
                     src={member.src}
                     className="relative aspect-[4/5] w-full mb-6"
                   />
-                  <h2 className="font-display text-2xl text-bone mb-1">{member.name}</h2>
-                  <p className="text-xs uppercase tracking-widest text-blood-bright mb-4">
-                    {member.role}
-                  </p>
-                  <p className="text-bone-dim leading-relaxed">{member.bio}</p>
+                  <h2 className="font-display text-2xl text-bone">{member.name}</h2>
                 </Reveal>
               ))}
             </div>
